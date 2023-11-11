@@ -1,0 +1,18 @@
+@import './fonts';
+@import './reset';
+@import './vars';
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.text-color-accent {
+  color: $accent;
+}
+
+body {
+  font-family: $font-main;
+  font-size: 20px;
+}
