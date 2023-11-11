@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  publicDir: `/CV/`,
+  base: '/CV/',
   plugins: [
     vue(),
   ],
