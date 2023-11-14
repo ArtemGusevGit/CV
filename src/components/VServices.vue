@@ -140,7 +140,26 @@ const slides = [
   border-radius: 35px;
   fill: rgba(104, 104, 104, 0.2);
   backdrop-filter: blur(7.5px);
-  border: 1px solid rgba(249, 250, 251, 0.3);
+}
+
+.card::after {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 200px;
+  background-color: rgba(249, 250, 251, 0.3);
+  top: 110px;
+  left: 0;
+}
+
+.card::before {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 200px;
+  background-color: rgba(249, 250, 251, 0.3);
+  top: 110px;
+  right: 0px;
 }
 
 .card-title {
@@ -148,7 +167,9 @@ const slides = [
   font-size: 32px;
   font-weight: 500;
   padding: 44px 37px 23px 37px;
-  border-bottom: 1px solid rgba(249, 250, 251, 0.3);
+  border: 1px solid rgba(249, 250, 251, 0.3);
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
 }
 
 .card-img {
