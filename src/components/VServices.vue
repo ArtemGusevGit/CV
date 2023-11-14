@@ -4,7 +4,9 @@ import { ref, computed, reactive } from 'vue'
 import type { CSSProperties } from 'vue'
 import btnIcon from '@/assets/img/serv/arrow-icon.svg'
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide, Pagination } from 'vue3-carousel'
+import CardImgOne from '@/assets/img/serv/cards/card-img1.png'
+import CardImgTwo from '@/assets/img/serv/cards/card-img2.png'
 
 const target = ref(null)
 const myCarousel = ref(null)
@@ -33,19 +35,19 @@ const layer3 = computed(() => ({
 const slides = [
   {
     name: 'UI/ UX Design',
-    img: '/CV/src/assets/img/serv/cards/card-img1.png'
+    img: CardImgOne
   },
   {
     name: 'Web Design',
-    img: '/CV/src/assets/img/serv/cards/card-img2.png'
+    img: CardImgTwo
   },
   {
     name: 'Landing Page',
-    img: '/CV/src/assets/img/serv/cards/card-img1.png'
+    img: CardImgOne
   },
   {
     name: 'UI/ UX Design',
-    img: '/CV/src/assets/img/serv/cards/card-img2.png'
+    img: CardImgTwo
   }
 ]
 </script>
