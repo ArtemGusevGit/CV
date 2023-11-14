@@ -137,6 +137,7 @@ const slides = [
 }
 
 .card {
+  max-width: 95%;
   border-radius: 35px;
   fill: rgba(104, 104, 104, 0.2);
   backdrop-filter: blur(7.5px);
