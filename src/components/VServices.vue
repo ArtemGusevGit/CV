@@ -33,19 +33,19 @@ const layer3 = computed(() => ({
 const slides = [
   {
     name: 'UI/ UX Design',
-    img: '/src/assets/img/serv/cards/card-img1.png'
+    img: '/CV/src/assets/img/serv/cards/card-img1.png'
   },
   {
     name: 'Web Design',
-    img: '/src/assets/img/serv/cards/card-img2.png'
+    img: '/CV/src/assets/img/serv/cards/card-img2.png'
   },
   {
     name: 'Landing Page',
-    img: '/src/assets/img/serv/cards/card-img1.png'
+    img: '/CV/src/assets/img/serv/cards/card-img1.png'
   },
   {
     name: 'UI/ UX Design',
-    img: '/src/assets/img/serv/cards/card-img2.png'
+    img: '/CV/src/assets/img/serv/cards/card-img2.png'
   }
 ]
 </script>
