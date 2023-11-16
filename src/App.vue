@@ -2,6 +2,8 @@
 import VHeader from '@/components/VHeader.vue'
 import VHero from '@/components/VHero.vue'
 import VServices from '@/components/VServices.vue'
+import VExperince from './components/VExperince.vue'
+import VHireMe from './components/VHireMe.vue'
 </script>
 
 <template>
@@ -10,4 +12,6 @@ import VServices from '@/components/VServices.vue'
     <VHero />
   </div>
   <VServices />
+  <VExperince />
+  <VHireMe />
 </template>

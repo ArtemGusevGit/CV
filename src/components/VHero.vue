@@ -64,7 +64,7 @@ import VToggle from '@/components/ui/VToggle.vue'
   border: 1.2px solid $gray;
   border-radius: 40px;
   margin-bottom: 10px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 
   :hover {
     background-color: $accent;

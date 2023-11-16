@@ -54,7 +54,7 @@
   position: relative;
   width: 133px;
   height: 66px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 
   &:hover {
     background-color: $accent;
