@@ -29,7 +29,7 @@ const layer2 = computed(() => ({
 
 const layer3 = computed(() => ({
   ...layerBase,
-  transform: `translateY(-${parallax.roll * 30}px)`
+  transform: `translateX(${parallax.roll * 30}px)`
 }))
 
 const slides = [
@@ -109,6 +109,7 @@ const slides = [
   background-repeat: no-repeat;
   background-size: cover;
   padding: 120px 0 50px;
+  overflow: hidden;
 }
 
 .services-info {
@@ -139,6 +140,7 @@ const slides = [
 .card {
   max-width: 95%;
   border-radius: 35px;
+  cursor: pointer;
 }
 
 .card-title {
@@ -151,6 +153,7 @@ const slides = [
   border-top-left-radius: 35px;
   fill: rgba(104, 104, 104, 0.2);
   backdrop-filter: blur(7.5px);
+  transition: 0.2s all ease;
 }
 
 .card-space {
@@ -160,6 +163,7 @@ const slides = [
   margin-bottom: -120px;
   fill: rgba(104, 104, 104, 0.2);
   backdrop-filter: blur(7.5px);
+  transition: 0.2s all ease;
 }
 
 .card-img {
@@ -195,7 +199,7 @@ const slides = [
 }
 
 :deep(.carousel__pagination-button--active::after) {
-  background-color: #fd853a;
+  background-color:   $accent;
   width: 60px;
   height: 15px;
   border-radius: 20px;
@@ -209,7 +213,12 @@ const slides = [
   top: 10%;
 }
 .decor-right {
-  right: 0;
+  right: -5%;
   bottom: 0;
+}
+
+.card:hover .card-title,
+.card:hover .card-space {
+  background-color: $accent;
 }
 </style>

@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import VToggle from '@/components/ui/VToggle.vue'
+
+type TEmits = {
+  (e: 'scroll-to-hire-section'): void
+}
+
+const emit = defineEmits<TEmits>()
+const handleClick = () => emit('scroll-to-hire-section')
 </script>
 
 <template>
@@ -40,7 +47,7 @@ import VToggle from '@/components/ui/VToggle.vue'
       <img src="@/assets/img/hero/hero-img.png" alt="hero-img" />
     </div>
     <div class="hero-toggle">
-      <VToggle />
+      <VToggle @hamdeClick="handleClick" />
     </div>
   </div>
 </template>

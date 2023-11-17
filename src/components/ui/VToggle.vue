@@ -1,8 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+type TEmits = {
+  (e: 'hamdeClick'): void
+}
+const emit = defineEmits<TEmits>()
+const toggle = ref(false)
+
+const takeTest = () => {
+  emit('hamdeClick')
+
+  setTimeout(() => {
+    toggle.value = false
+  }, 500)
+}
+</script>
 
 <template>
   <label class="switch">
-    <input type="checkbox" />
+    <input v-model="toggle" type="checkbox" @click="takeTest" />
     <span class="slider round"> </span>
     <div class="toggle-left">
       <div>Portfolio</div>
