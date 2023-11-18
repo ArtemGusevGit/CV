@@ -12,7 +12,7 @@ const handleClick = () => emit('scroll-to-hire-section')
 <template>
   <div class="hero">
     <div class="btn-container">
-      <button class="hero-btn">Hello!</button>
+      <div class="hero-btn">Hello!</div>
       <div class="btn-decor">
         <img src="@/assets/img/hero/btn-decor.png" alt="decor" />
       </div>

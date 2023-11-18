@@ -58,6 +58,7 @@
   margin-top: 85px;
   display: flex;
   justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .experience-info__list {
