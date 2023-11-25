@@ -105,11 +105,12 @@ const slides = [
 <style scoped lang="scss">
 .services {
   position: relative;
-  background-image: url(../assets/img/serv/serv-bg.jpg);
+  background-image: url(@/assets/img/serv/serv-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 120px 0 50px;
   overflow: hidden;
+  border-radius: 3rem;
 }
 
 .services-info {

@@ -10,11 +10,17 @@ import VTicker from '@/components/ui/VTicker.vue'
       Have an Awsome Project<br />
       Idea? <span class="text-color-accent">Let’s Discuss</span>
     </h1>
-    <div class="discuss-input">
+    <form class="discuss-input">
       <img src="@/assets/img/disc/input-icon.png" alt="input-icon" />
-      <input placeholder="Enter Email Address" />
+      <input
+        placeholder="Enter Email Address"
+        type="email"
+        name="email"
+        id="email"
+        autocomplete="on"
+      />
       <a class="discuss-btn" href="#">Send</a>
-    </div>
+    </form>
     <div class="under-input">
       <div class="under-input__tag">
         <starIcon />

@@ -11,30 +11,16 @@ const handleClick = () => emit('scroll-to-hire-section')
 
 <template>
   <div class="hero">
-    <div class="btn-container">
-      <div class="hero-btn">Hello!</div>
-      <div class="btn-decor">
-        <img src="@/assets/img/hero/btn-decor.png" alt="decor" />
-      </div>
-    </div>
-    <div class="title-container">
-      <h1 class="hero-title">
-        I’m <span class="text-color-accent">Jenny</span>,<br />Product Designer
-      </h1>
-      <div class="title-decor">
-        <img src="@/assets/img/hero/title-decor.png" alt="decor" />
-      </div>
-    </div>
-
+    <a href="#!" class="hero-btn">Hello!</a>
+    <h1 class="hero-title">
+      I’m <span class="text-color-accent">Jenny</span>,<br />Product Designer
+    </h1>
     <div class="hero-info">
-      <div class="ihero-info__icon">
-        <img src="@/assets/img/hero/info-icon.png" alt="decor" />
-      </div>
+      <img src="@/assets/img/hero/info-icon.png" alt="decor" />
       <div class="hero-info__text">
         Jenny’s Exceptional product designensure our website’s success. Highly Recommended
       </div>
     </div>
-
     <div class="hero-exp">
       <div class="hero-exp__stars">
         <img src="@/assets/img/hero/exp-icon.png" alt="stars" />
@@ -42,9 +28,12 @@ const handleClick = () => emit('scroll-to-hire-section')
       <div class="hero-exp__text">10 Years</div>
       <div class="hero-exp__under-text">Experince</div>
     </div>
-
-    <div class="hero-img">
-      <img src="@/assets/img/hero/hero-img.png" alt="hero-img" />
+    <div class="hero-content">
+      <div class="hero-img">
+        <img src="@/assets/img/hero/hero-img.png" alt="hero-img" />
+      </div>
+      <div class="hero-img-decor" />
+      <div class="hero-img-circle" />
     </div>
     <div class="hero-toggle">
       <VToggle @hamdeClick="handleClick" />
@@ -59,12 +48,12 @@ const handleClick = () => emit('scroll-to-hire-section')
   padding-top: 50px;
   display: flex;
   align-items: center;
-  // justify-content: center;
   flex-direction: column;
   margin-top: 130px;
 }
 
 .hero-btn {
+  position: relative;
   padding: 10px 25px;
   color: $gray;
   font-weight: 500;
@@ -73,8 +62,19 @@ const handleClick = () => emit('scroll-to-hire-section')
   margin-bottom: 10px;
   transition: all 0.2s ease;
 
-  :hover {
+  &:hover {
     background-color: $accent;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: -22px;
+    width: 28px;
+    height: 28px;
+    background-image: url(@/assets/img/hero/btn-decor.png);
+    background-size: cover;
   }
 }
 
@@ -82,29 +82,23 @@ const handleClick = () => emit('scroll-to-hire-section')
   position: relative;
 }
 
-.btn-container {
-  position: relative;
-  max-width: 500px;
-}
-
 .hero-title {
+  position: relative;
   font-family: $font-second;
   font-size: 95px;
   line-height: 100%;
   text-align: center;
-}
 
-.title-decor {
-  position: absolute;
-  left: -9%;
-  top: 82%;
-}
-
-.btn-decor {
-  position: absolute;
-  right: 0%;
-  top: 0%;
-  transform: translate(70%, -80%);
+  &::before {
+    content: '';
+    position: absolute;
+    left: -70px;
+    bottom: -40px;
+    width: 75px;
+    height: 75px;
+    background-image: url(@/assets/img/hero/title-decor.png);
+    background-size: cover;
+  }
 }
 
 .hero-info {
@@ -146,14 +140,49 @@ const handleClick = () => emit('scroll-to-hire-section')
   }
 }
 
+.hero-content {
+  position: relative;
+}
 .hero-img {
+  position: relative;
   z-index: 10;
-  margin-top: -114px;
+  bottom: 88px;
+}
+
+.hero-img-decor {
+  position: absolute;
+  left: 0px;
+  top: -133px;
+  width: 1000px;
+  height: 680px;
+  background-image: url(@/assets/img/hero/hero-img-decor.png);
+  background-size: cover;
+  z-index: 9;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero-img-circle {
+  &::after {
+    position: absolute;
+    content: '';
+    height: 810px;
+    width: 810px;
+    background-color: #feb273;
+    top: 100px;
+    left: 78px;
+    border-radius: 100%;
+  }
 }
 
 .hero-toggle {
   z-index: 20;
   position: absolute;
   bottom: 5%;
+}
+
+.hero-content:hover .hero-img-decor,
+.hero-toggle:hover .hero-img-decor {
+  opacity: 1;
 }
 </style>

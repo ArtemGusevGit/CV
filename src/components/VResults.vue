@@ -79,7 +79,7 @@ const slides = [
 </template>
 <style scoped lang="scss">
 .results {
-  background-image: url(../assets/img/serv/serv-bg.jpg);
+  background-image: url(@/assets/img/serv/serv-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 120px 0 50px;
@@ -102,7 +102,7 @@ const slides = [
     top: -15px;
     right: 0;
     color: #fff;
-    background-image: url(../assets/img/results/decor/decor-title-img.png);
+    background-image: url(@/assets/img/results/decor/decor-title-img.png);
     background-repeat: no-repeat;
   }
 }
@@ -123,7 +123,7 @@ const slides = [
     bottom: -15px;
     left: -10px;
     color: #fff;
-    background-image: url(../assets/img/results/decor/decor-subtitle-left-img.png);
+    background-image: url(@/assets/img/results/decor/decor-subtitle-left-img.png);
     background-repeat: no-repeat;
   }
 
@@ -135,7 +135,7 @@ const slides = [
     top: -15px;
     right: -20px;
     color: #fff;
-    background-image: url(../assets/img/results/decor/decor-subtitle-right-img.png);
+    background-image: url(@/assets/img/results/decor/decor-subtitle-right-img.png);
     background-repeat: no-repeat;
   }
 }
@@ -190,7 +190,7 @@ const slides = [
   top: 0;
   width: 8rem;
   height: 8rem;
-  background-image: url(../assets/img/results/decor/card-decor-img.png);
+  background-image: url(@/assets/img/results/decor/card-decor-img.png);
 }
 
 .card-text {

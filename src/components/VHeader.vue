@@ -32,7 +32,7 @@
 }
 
 .header-content {
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: $gray;
   color: $white;
   display: flex;

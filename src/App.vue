@@ -11,7 +11,6 @@ import VFooter from '@/components/VFooter.vue'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 
-
 const scrollTo: Ref<HTMLElement | null> = ref(null)
 
 const scrollToHireSection = () => {
