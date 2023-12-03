@@ -148,7 +148,6 @@ const breakpoints = {
   font-size: 48px;
   font-weight: 500;
   text-wrap: nowrap;
-
 }
 
 .services-info__text {
@@ -232,6 +231,10 @@ const breakpoints = {
 
 .decor-left {
   left: 0;
+
+  @include media-breakpoint-down(lg) {
+      top: 35%;
+  }
 }
 .decor-center {
   left: 40%;
@@ -240,6 +243,10 @@ const breakpoints = {
 .decor-right {
   right: -5%;
   bottom: 0;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
 }
 
 .card:hover .card-title,
