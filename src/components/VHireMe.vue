@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .hire-bg {
   border-radius: 50px;
   background-color: #f2f4f7;
@@ -34,7 +34,13 @@
 
 .hire {
   display: flex;
-  padding: 100px 0;
+  padding: 100px 10px;
+
+  @include media-breakpoint-down(xl) {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 10px;
+  }
 }
 
 .hire-img {
@@ -49,13 +55,25 @@
 
 .hire-info {
   display: flex;
-  gap: 176px;
+  justify-content: space-between;
 }
 
 .hire-title {
   font-size: 64px;
   font-weight: 600;
   margin-top: 64px;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down (lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down (sm) {
+    font-size: 32px;
+  }
 }
 
 .hire-text {

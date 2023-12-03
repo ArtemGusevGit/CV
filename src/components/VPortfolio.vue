@@ -26,6 +26,21 @@ const slides = [
     img: CardImg
   }
 ]
+
+const breakpoints = {
+  1400: {
+    itemsToShow: 2,
+    snapAlign: 'center'
+  },
+  1300: {
+    itemsToShow: 1,
+    snapAlign: 'center'
+  },
+  0: {
+    itemsToShow: 1,
+    snapAlign: 'center'
+  }
+}
 </script>
 
 <template>
@@ -36,7 +51,7 @@ const slides = [
       </h1>
       <a class="portfolio-btn" href="#!">See all</a>
     </div>
-    <carousel ref="myCarousel" :items-to-show="2">
+    <carousel ref="myCarousel" :items-to-show="2" :breakpoints="breakpoints">
       <slide v-for="slide in slides" :key="slide.id">
         <div class="card">
           <div class="card-img">
@@ -52,15 +67,15 @@ const slides = [
         <pagination />
       </template>
     </carousel>
-    <div class="portfolio-tags">
-      <ul class="tag-list">
-        <li class="tag">Landing Page</li>
-        <li class="tag">Product Design</li>
-        <li class="tag">Animation</li>
-        <li class="tag">Glassmorphism</li>
-        <li class="tag">Cards</li>
-      </ul>
-    </div>
+
+    <ul class="tag-list">
+      <li class="tag">Landing Page</li>
+      <li class="tag">Product Design</li>
+      <li class="tag">Animation</li>
+      <li class="tag">Glassmorphism</li>
+      <li class="tag">Cards</li>
+    </ul>
+
     <div class="portfolio-bottom">
       <div class="portfolio-bottom__action">
         <div class="portfolio-bottom__title">Lirante - Food Dilvery Solution</div>
@@ -78,18 +93,37 @@ const slides = [
 <style scoped lang="scss">
 .portfolio {
   padding: 6rem 0;
+  overflow: hidden;
 }
 
 .portfolio-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 10px;
+
+  @include media-breakpoint-down(xl) {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .portfolio-title {
   font-size: 4rem;
   font-weight: 600;
   max-width: 40rem;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down (lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down (sm) {
+    font-size: 32px;
+  }
 }
 
 .portfolio-btn {
@@ -178,9 +212,11 @@ const slides = [
 
 .tag-list {
   display: flex;
-  justify-content: center;
   gap: 14px;
   padding: 3rem 0;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -191,11 +227,14 @@ const slides = [
   font-family: Inter;
   font-size: 1.25rem;
   font-weight: 400;
+  justify-self: center;
+  text-wrap: nowrap;
 }
 
 .portfolio-bottom {
   margin: 0 auto;
   max-width: 48rem;
+  padding: 0 10px;
 }
 
 .portfolio-bottom__action {
@@ -209,6 +248,10 @@ const slides = [
   background-color: $accent;
   border-radius: 100%;
   padding: 0.75rem;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
 }
 
 .portfolio-bottom__title {
@@ -241,7 +284,7 @@ const slides = [
   border-radius: 100%;
   height: 64px;
   width: 64px;
-  right: -20px;
+  right: -10px;
   z-index: 50;
 }
 
@@ -250,7 +293,7 @@ const slides = [
   border-radius: 100%;
   height: 64px;
   width: 64px;
-  left: -20px;
+  left: -10px;
 }
 
 :deep(.carousel__icon) {

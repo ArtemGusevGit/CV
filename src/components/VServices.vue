@@ -50,6 +50,21 @@ const slides = [
     img: CardImgTwo
   }
 ]
+
+const breakpoints = {
+  1200: {
+    itemsToShow: 3,
+    snapAlign: 'center'
+  },
+  700: {
+    itemsToShow: 2,
+    snapAlign: 'center'
+  },
+  0: {
+    itemsToShow: 1,
+    snapAlign: 'center'
+  }
+}
 </script>
 
 <template>
@@ -80,7 +95,7 @@ const slides = [
           vulputate, bibendum sodales
         </div>
       </div>
-      <carousel ref="myCarousel" :items-to-show="3">
+      <carousel ref="myCarousel" :items-to-show="3" :breakpoints="breakpoints">
         <slide v-for="slide in slides" :key="slide.name">
           <div class="card">
             <div class="card-title">{{ slide.name }}</div>
@@ -111,6 +126,10 @@ const slides = [
   padding: 120px 0 50px;
   overflow: hidden;
   border-radius: 3rem;
+
+  @include media-breakpoint-down(xl) {
+    padding: 60px 0 50px;
+  }
 }
 
 .services-info {
@@ -119,12 +138,17 @@ const slides = [
   align-items: center;
   color: #fff;
   margin-bottom: 96px;
+
+  @include media-breakpoint-down(xl) {
+    flex-direction: column;
+  }
 }
 
 .services-info__title {
   font-size: 48px;
   font-weight: 500;
   text-wrap: nowrap;
+
 }
 
 .services-info__text {
@@ -200,7 +224,7 @@ const slides = [
 }
 
 :deep(.carousel__pagination-button--active::after) {
-  background-color:   $accent;
+  background-color: $accent;
   width: 60px;
   height: 15px;
   border-radius: 20px;

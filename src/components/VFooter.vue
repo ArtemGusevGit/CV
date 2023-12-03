@@ -16,12 +16,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+  }
 }
 
 .footer-title {
   color: #fcfcfd;
   font-size: 4rem;
   font-weight: 600;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down (lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down (sm) {
+    font-size: 32px;
+  }
 }
 
 .footer-btn {

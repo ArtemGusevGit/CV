@@ -43,15 +43,31 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .experience {
   padding: 85px 0 155px;
+
+  @include media-breakpoint-down(xl) {
+    padding: 60px 0 50px;
+  }
 }
 
 .experience-title {
   text-align: center;
   font-size: 64px;
   font-weight: 500;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down (lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down (sm) {
+    font-size: 32px;
+  }
 }
 
 .experience-info {
@@ -65,6 +81,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 48px;
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .exp-img {
@@ -72,6 +96,14 @@
   align-self: center;
   grid-column: 2;
   grid-row: 1/4;
+
+  @include media-breakpoint-down(lg) {
+    grid-row: 1/6;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }
 
 .experience-info__title {

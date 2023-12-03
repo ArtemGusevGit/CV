@@ -29,9 +29,7 @@ const handleClick = () => emit('scroll-to-hire-section')
       <div class="hero-exp__under-text">Experince</div>
     </div>
     <div class="hero-content">
-      <div class="hero-img">
-        <img src="@/assets/img/hero/hero-img.png" alt="hero-img" />
-      </div>
+      <img class="hero-img" src="@/assets/img/hero/hero-img.png" alt="hero-img" />
       <div class="hero-img-decor" />
       <div class="hero-img-circle" />
     </div>
@@ -43,13 +41,17 @@ const handleClick = () => emit('scroll-to-hire-section')
 
 <style scoped lang="scss">
 .hero {
-  height: 846px;
   position: relative;
   padding-top: 50px;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 130px;
+  margin-bottom: -88px;
+
+  @include media-breakpoint-down (xl) {
+    padding: 0;
+  }
 }
 
 .hero-btn {
@@ -89,6 +91,18 @@ const handleClick = () => emit('scroll-to-hire-section')
   line-height: 100%;
   text-align: center;
 
+  @include media-breakpoint-down (xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down (lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down (sm) {
+    font-size: 32px;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -98,6 +112,13 @@ const handleClick = () => emit('scroll-to-hire-section')
     height: 75px;
     background-image: url(@/assets/img/hero/title-decor.png);
     background-size: cover;
+
+    @include media-breakpoint-down (sm) {
+      left: -40px;
+      bottom: -30px;
+      width: 45px;
+      height: 45px;
+    }
   }
 }
 
@@ -107,6 +128,10 @@ const handleClick = () => emit('scroll-to-hire-section')
   top: 50%;
   left: 5%;
   transform: translate(-5%, -50%);
+
+  @include media-breakpoint-down (lg) {
+    display: none;
+  }
 
   &__text {
     margin-top: 24px;
@@ -119,6 +144,10 @@ const handleClick = () => emit('scroll-to-hire-section')
   top: 50%;
   right: 5%;
   transform: translate(-5%, -50%);
+
+  @include media-breakpoint-down (lg) {
+    display: none;
+  }
 
   &__stars {
     display: flex;
@@ -143,11 +172,18 @@ const handleClick = () => emit('scroll-to-hire-section')
 .hero-content {
   position: relative;
 }
+
 .hero-img {
   position: relative;
   z-index: 10;
-  bottom: 88px;
+  bottom: 88px; 
+
+  @include media-breakpoint-down (xl) {
+    z-index: 0;
+    bottom: 46px;
+  }
 }
+
 
 .hero-img-decor {
   position: absolute;
@@ -160,6 +196,10 @@ const handleClick = () => emit('scroll-to-hire-section')
   z-index: 9;
   opacity: 0;
   transition: opacity 0.5s ease;
+
+  @include media-breakpoint-down (xl) {
+    display: none;
+  }
 }
 
 .hero-img-circle {
@@ -173,12 +213,17 @@ const handleClick = () => emit('scroll-to-hire-section')
     left: 78px;
     border-radius: 100%;
   }
+
+  @include media-breakpoint-down (xl) {
+    display: none;
+  }
 }
 
 .hero-toggle {
+  // pointer-events: none;
   z-index: 20;
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
 }
 
 .hero-content:hover .hero-img-decor,

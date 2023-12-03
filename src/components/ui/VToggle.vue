@@ -37,6 +37,17 @@ const takeTest = () => {
   top: 20px;
   font-size: 25px;
   font-weight: 300;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 16px;
+    left: 30px;
+  }
+
+  & img{
+    @include media-breakpoint-down (xl) {
+      display: none;
+    }
+  }
 }
 
 .toggle-right {
@@ -46,6 +57,12 @@ const takeTest = () => {
   left: 224px;
   font-size: 25px;
   font-weight: 300;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 16px;
+    left: 154px;
+    top: 21px;
+  }
 }
 
 .switch {
@@ -53,6 +70,11 @@ const takeTest = () => {
   display: inline-block;
   width: 360px;
   height: 82px;
+
+  @include media-breakpoint-down (xl) {
+    width: 260px;
+    height: 62px;
+  }
 }
 
 /* Hide default HTML checkbox */
@@ -88,6 +110,11 @@ const takeTest = () => {
   background-color: $accent;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+
+  @include media-breakpoint-down (xl) {
+    width: 100px;
+    height: 37px;
+  }
 }
 
 input:checked + .slider {
@@ -101,6 +128,13 @@ input:checked + .slider:before {
   -ms-transform: translateX(180px);
   transform: translateX(180px);
   width: 158px;
+
+  @include media-breakpoint-down (xl) {
+    -webkit-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    transform: translateX(100px);
+    width: 138px;
+  }
 }
 
 /* Rounded sliders */

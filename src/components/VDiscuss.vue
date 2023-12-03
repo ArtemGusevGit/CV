@@ -48,6 +48,18 @@ import VTicker from '@/components/ui/VTicker.vue'
   font-size: 4rem;
   font-weight: 600;
   text-align: center;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 32px;
+  }
 }
 
 .discuss-input {
@@ -61,11 +73,21 @@ import VTicker from '@/components/ui/VTicker.vue'
   padding: 0.88rem;
   display: flex;
   align-items: center;
+
+  & img {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
 }
 
 input {
   text-indent: 6rem;
   width: 100%;
+
+  @include media-breakpoint-down(lg) {
+    text-indent: 0.5rem;
+  }
 }
 
 .discuss-btn {
@@ -87,6 +109,11 @@ input {
   justify-content: center;
   gap: 5.8rem;
   margin-bottom: 6rem;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-down(lg) {
+    gap: 2rem;
+  }
 }
 
 .under-input__tag {

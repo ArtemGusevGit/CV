@@ -7,9 +7,14 @@
           <a class="link-container" href="#"><span class="link-text">About</span></a>
           <a class="link-container" href="#"><span class="link-text">Service</span></a>
         </div>
-        <div>
+        <div class="header-logo">
           <a href="#">
-            <img class="header-logo" src="@/assets/img/header-logo.png" alt="header-logo" />
+            <img class="logo-img" src="@/assets/img/header-logo.png" alt="header-logo" />
+          </a>
+          <a class="burger" href="#">
+            <div class="center">
+              <div></div>
+            </div>
           </a>
         </div>
         <div class="header-right">
@@ -47,6 +52,10 @@
   display: flex;
   justify-content: space-between;
   gap: 14px;
+
+  @include media-breakpoint-down(xl) {
+    display: none;
+  }
 }
 
 .link-container {
@@ -71,6 +80,53 @@
 }
 
 .header-logo {
-  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include media-breakpoint-down(xl) {
+    width: 100%;
+  }
 }
+
+.burger {
+  display: none;
+  color: #fff;
+
+  @include media-breakpoint-down(xl) {
+    display: flex;
+  }
+}
+
+body {
+  background: dodgerblue;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.center {
+  width: 40px;
+  margin-right: 0.5rem;
+}
+
+.center:before,
+.center:after,
+.center div {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+.center:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.center:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.center:hover div {
+  transform: scale(0);
+}
+
 </style>

@@ -28,6 +28,17 @@ const slides = [
     rateImg: RateImg
   }
 ]
+
+const breakpoints = {
+  1400: {
+    itemsToShow: 1.5,
+    snapAlign: 'center'
+  },
+  0: {
+    itemsToShow: 1,
+    snapAlign: 'center'
+  }
+}
 </script>
 <template>
   <div class="results">
@@ -40,7 +51,7 @@ const slides = [
       dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis orci
       elementum egestas lobortis.
     </div>
-    <carousel ref="myCarousel" :items-to-show="2" :wrap-around="true">
+    <carousel ref="myCarousel" :items-to-show="2" :wrap-around="true" :breakpoints="breakpoints">
       <slide v-for="slide in slides" :key="slide.name">
         <div class="card">
           <div class="card-info">
@@ -83,6 +94,7 @@ const slides = [
   background-repeat: no-repeat;
   background-size: cover;
   padding: 120px 0 50px;
+  border-radius: 35px;
 }
 
 .results-title {
@@ -93,6 +105,18 @@ const slides = [
   text-align: center;
   font-weight: 500;
   max-width: 31rem;
+
+  @include media-breakpoint-down (xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down (lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down (sm) {
+    font-size: 32px;
+  }
 
   &::before {
     content: '';
@@ -108,12 +132,14 @@ const slides = [
 }
 
 .results-text {
+  // overflow: hidden;
   position: relative;
   color: #fff;
   max-width: 46rem;
   margin: 0 auto;
   text-align: center;
   margin-top: 0.8rem;
+  padding: 0 2rem;
 
   &::before {
     content: '';
@@ -121,10 +147,11 @@ const slides = [
     width: 2rem;
     height: 2rem;
     bottom: -15px;
-    left: -10px;
+    left: 0px;
     color: #fff;
     background-image: url(@/assets/img/results/decor/decor-subtitle-left-img.png);
     background-repeat: no-repeat;
+    // overflow: hidden;
   }
 
   &::after {
@@ -133,10 +160,11 @@ const slides = [
     width: 2rem;
     height: 2rem;
     top: -15px;
-    right: -20px;
+    right: 0px;
     color: #fff;
     background-image: url(@/assets/img/results/decor/decor-subtitle-right-img.png);
     background-repeat: no-repeat;
+    // overflow: hidden;
   }
 }
 
