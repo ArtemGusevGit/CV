@@ -148,6 +148,14 @@ const breakpoints = {
   font-size: 48px;
   font-weight: 500;
   text-wrap: nowrap;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 32px;
+  }
 }
 
 .services-info__text {
@@ -233,7 +241,7 @@ const breakpoints = {
   left: 0;
 
   @include media-breakpoint-down(lg) {
-      top: 35%;
+    top: 35%;
   }
 }
 .decor-center {

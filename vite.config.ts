@@ -17,7 +17,7 @@ export default defineConfig({
             additionalData: `@import "@/assets/styles/vars.scss"; @import "@/assets/styles/breakpoints.scss";` ,
         },
     },
-},
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

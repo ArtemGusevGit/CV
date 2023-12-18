@@ -57,15 +57,15 @@
   font-size: 64px;
   font-weight: 500;
 
-  @include media-breakpoint-down (xl) {
+  @include media-breakpoint-down(xl) {
     font-size: 64px;
   }
 
-  @include media-breakpoint-down (lg) {
+  @include media-breakpoint-down(lg) {
     font-size: 48px;
   }
 
-  @include media-breakpoint-down (sm) {
+  @include media-breakpoint-down(sm) {
     font-size: 32px;
   }
 }
@@ -109,11 +109,27 @@
 .experience-info__title {
   font-size: 40px;
   font-weight: 600;
+
+  @include media-breakpoint-down(xl) {
+    font-size: 64px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    font-size: 48px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 32px;
+  }
 }
 
 .experience-info__subtitle {
   color: #98a2b3;
   font-size: 24px;
   font-weight: 400;
+  
+  @include media-breakpoint-down(lg) {
+    font-size: 20px;
+  }
 }
 </style>

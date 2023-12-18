@@ -102,7 +102,7 @@ const breakpoints = {
   justify-content: space-between;
   padding: 0 10px;
 
-  @include media-breakpoint-down(xl) {
+  @include media-breakpoint-down(sm) {
     flex-direction: column;
     align-items: start;
   }
@@ -135,6 +135,11 @@ const breakpoints = {
   transition: all 0.2s ease;
   border-radius: 3.75rem;
   border: 1px solid $accent;
+  text-wrap: nowrap;
+
+  @include media-breakpoint-down (sm) {
+    display: none;
+  }
 
   &:hover {
     background-color: #fff;
